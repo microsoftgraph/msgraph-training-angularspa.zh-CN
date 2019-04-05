@@ -13,34 +13,29 @@
 - 你可以[注册新的个人 Microsoft 帐户](https://signup.live.com/signup?wa=wsignin1.0&rpsnv=12&ct=1454618383&rver=6.4.6456.0&wp=MBI_SSL_SHARED&wreply=https://mail.live.com/default.aspx&id=64855&cbcxt=mai&bk=1454618383&uiflavor=web&uaid=b213a65b4fdc484382b6622b3ecaa547&mkt=E-US&lc=1033&lic=1)。
 - 你可以[注册 office 365 开发人员计划](https://developer.microsoft.com/office/dev-program)以获取免费的 office 365 订阅。
 
-## <a name="register-a-web-application-with-the-application-registration-portal"></a>在应用程序注册门户中注册 web 应用程序
+## <a name="register-a-web-application-with-the-azure-active-directory-admin-center"></a>向 Azure Active Directory 管理中心注册 web 应用程序
 
-1. 打开浏览器并导航到[应用程序注册门户](https://apps.dev.microsoft.com)。 使用**个人帐户**(亦称: Microsoft 帐户) 或**工作或学校帐户**登录。
+1. 打开浏览器并导航到[Azure Active Directory 管理中心](https://aad.portal.azure.com)。 使用**个人帐户**(亦称: Microsoft 帐户) 或**工作或学校帐户**登录。
 
-1. 选择页面顶部的 "**添加应用**"。
+1. 在左侧导航栏中选择 " **Azure Active Directory** ", 然后选择 "**管理**" 下的 "**应用注册 (预览)** "。
 
-    > **注意:** 如果在页面上看到多个 "**添加应用程序**" 按钮, 请选择与 "**聚合应用程序**" 列表对应的项。
+    ![应用注册的屏幕截图 ](/tutorial/images/aad-portal-app-registrations.png)
 
-1. 在 "**注册应用程序**" 页上, 将**应用程序名称**设置为 "**角度图" 教程**, 然后选择 "**创建**"。
+1. 选择 "**新建注册**"。 在 "**注册应用程序**" 页上, 按如下所示设置值。
 
-    ![在应用注册门户网站中创建新应用程序的屏幕截图](/tutorial/images/arp-create-app-01.png)
+    - 将**名称**设置`Angular Graph Tutorial`为。
+    - 将**支持的帐户类型**设置为**任何组织目录和个人 Microsoft 帐户中的帐户**。
+    - 在 "**重定向 URI**" 下, 将第一个`Web`下拉下拉箭头, 并`http://localhost:4200`将值设置为。
 
-1. 在 "**角度图教程注册**" 页上的 "**属性**" 部分下, 复制**应用程序 Id** , 因为稍后将需要它。
+    !["注册应用程序" 页的屏幕截图](/tutorial/images/aad-register-an-app.png)
 
-    ![新创建的应用程序 ID 的屏幕截图](/tutorial/images/arp-create-app-02.png)
+1. 选择 "**注册**"。 在 "**角度图" 教程**页上, 复制**应用程序 (客户端) ID**的值并保存它, 下一步将需要它。
 
-1. 向下滚动到 "**平台**" 部分。
+    ![新应用注册的应用程序 ID 的屏幕截图](/tutorial/images/aad-application-id.png)
 
-    1. 选择 "**添加平台**"。
-    1. 在 "**添加平台**" 对话框中, 选择 " **Web**"。
+1. 选择 "**管理**" 下的 "**身份验证**"。 找到 "**隐式授予**" 部分并启用**访问令牌**和**ID 令牌**。 选择“保存”****。
 
-        ![为应用程序创建平台的屏幕截图](/tutorial/images/arp-create-app-03.png)
-
-    1. 在 " **Web**平台" 框中, 输入`http://localhost:4200` **重定向 url**的 url。
-
-        ![应用程序新添加的 Web 平台的屏幕截图](/tutorial/images/arp-create-app-04.png)
-
-1. 滚动到页面底部, 然后选择 "**保存**"。
+    ![隐式 grant 部分的屏幕截图](/tutorial/images/aad-implicit-grant.png)
 
 ## <a name="configure-the-sample"></a>配置示例
 
