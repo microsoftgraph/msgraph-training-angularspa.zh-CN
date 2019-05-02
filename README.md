@@ -1,10 +1,10 @@
-# <a name="microsoft-graph-training-module---build-angular-single-page-apps-with-microsoft-graph"></a>microsoft graph 培训模块-生成与 Microsoft graph 的单页面应用程序
+# <a name="microsoft-graph-training-module---build-angular-single-page-apps-with-microsoft-graph"></a>Microsoft Graph 培训模块-生成与 Microsoft Graph 的单页面应用程序
 
 本模块将介绍如何在创建 "角度单页面应用程序" 中使用 Microsoft Graph 来访问 Office 365 中的数据。
 
 ## <a name="lab---angular-single-page-apps-with-the-microsoft-graph"></a>具有 Microsoft Graph 的 Lab 角单页面应用
 
-在此实验室中, 您将创建一个角度单页应用程序, 该应用程序使用 Microsoft Graph 来访问 Office 365 中的数据, 并配置 azure Active Directory (azure AD) 以进行身份验证 & 授权。
+在此实验室中, 您将创建一个角度单页应用程序, 该应用程序使用 Microsoft Graph 来访问 Office 365 中的数据, 并配置 Azure Active Directory (Azure AD) 以进行身份验证 & 授权。
 
 - [角度 Microsoft Graph 教程](https://docs.microsoft.com/graph/tutorials/angular)
 

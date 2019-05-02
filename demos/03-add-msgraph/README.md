@@ -6,7 +6,7 @@
 
 - 在开发计算机上安装了[node.js](https://nodejs.org) 。 如果您没有 node.js, 请访问上一个链接 "下载选项"。 (**注意:** 本教程是使用节点版本10.7.0 编写的。 本指南中的步骤可能适用于其他版本, 但尚未经过测试。
 - 在开发计算机上安装了[角度 CLI](https://cli.angular.io/) 。
-- 使用 Outlook.com 上的邮箱的个人 Microsoft 帐户, 或者是 microsoft 工作或学校帐户。
+- 使用 Outlook.com 上的邮箱的个人 Microsoft 帐户, 或者是 Microsoft 工作或学校帐户。
 
 如果你没有 Microsoft 帐户, 可以使用以下几种方法获取免费帐户:
 
@@ -15,25 +15,25 @@
 
 ## <a name="register-a-web-application-with-the-azure-active-directory-admin-center"></a>向 Azure Active Directory 管理中心注册 web 应用程序
 
-1. 打开浏览器并导航到[Azure Active Directory 管理中心](https://aad.portal.azure.com)。 使用**个人帐户**(亦称: Microsoft 帐户) 或**工作或学校帐户**登录。
+1. 打开浏览器，并转到 [Azure Active Directory 管理中心](https://aad.portal.azure.com)。 使用**个人帐户**（亦称为“Microsoft 帐户”）或**工作或学校帐户**登录。
 
-1. 在左侧导航栏中选择 " **Azure Active Directory** ", 然后选择 "**管理**" 下的 "**应用注册 (预览)** "。
+1. 在左侧导航栏中选择 " **Azure Active Directory** ", 然后选择 "**管理**" 下的 "**应用程序注册**"。
 
     ![应用注册的屏幕截图 ](/tutorial/images/aad-portal-app-registrations.png)
 
-1. 选择 "**新建注册**"。 在 "**注册应用程序**" 页上, 按如下所示设置值。
+1. 选择“新注册”****。 在“注册应用”**** 页上，按如下方式设置值。
 
-    - 将**名称**设置`Angular Graph Tutorial`为。
-    - 将**支持的帐户类型**设置为**任何组织目录和个人 Microsoft 帐户中的帐户**。
-    - 在 "**重定向 URI**" 下, 将第一个`Web`下拉下拉箭头, 并`http://localhost:4200`将值设置为。
+    - 将“名称”**** 设置为“`Angular Graph Tutorial`”。
+    - 将“受支持的帐户类型”**** 设置为“任何组织目录中的帐户和个人 Microsoft 帐户”****。
+    - 在“重定向 URI”**** 下，将第一个下拉列表设置为“`Web`”，并将值设置为“`http://localhost:4200`”。
 
     !["注册应用程序" 页的屏幕截图](/tutorial/images/aad-register-an-app.png)
 
-1. 选择 "**注册**"。 在 "**角度图" 教程**页上, 复制**应用程序 (客户端) ID**的值并保存它, 下一步将需要它。
+1. 选择“注册”****。 在 "**角度图" 教程**页上, 复制**应用程序 (客户端) ID**的值并保存它, 下一步将需要它。
 
     ![新应用注册的应用程序 ID 的屏幕截图](/tutorial/images/aad-application-id.png)
 
-1. 选择 "**管理**" 下的 "**身份验证**"。 找到 "**隐式授予**" 部分并启用**访问令牌**和**ID 令牌**。 选择“保存”****。
+1. 选择“管理”**** 下的“身份验证”****。 找到 "**隐式授予**" 部分并启用**访问令牌**和**ID 令牌**。 选择“**保存**”。
 
     ![隐式 grant 部分的屏幕截图](/tutorial/images/aad-implicit-grant.png)
 

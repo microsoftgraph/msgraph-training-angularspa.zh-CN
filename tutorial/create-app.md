@@ -31,7 +31,7 @@ ng serve --open
 - 日期和时间格式的[时刻](https://github.com/moment/moment)。
 - [msal-](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md)用于对 Azure Active Directory 进行身份验证和检索访问令牌的角。
 - [rxjs-兼容](https://github.com/ReactiveX/rxjs/tree/master/compat)性, `msal-angular`包所需。
-- microsoft graph-用于调用 microsoft graph 的[客户端](https://github.com/microsoftgraph/msgraph-sdk-javascript)。
+- microsoft graph-用于调用 Microsoft Graph 的[客户端](https://github.com/microsoftgraph/msgraph-sdk-javascript)。
 
 在 CLI 中运行以下命令。
 
