@@ -1,8 +1,8 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-在本练习中, 你将扩展上一练习中的应用程序, 以支持 Azure AD 的身份验证。 若要获取所需的 OAuth 访问令牌以调用 Microsoft Graph, 这是必需的。 在此步骤中, 将[Microsoft 身份验证库的角度](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md)集成到应用程序中。
+在本练习中，你将扩展上一练习中的应用程序，以支持 Azure AD 的身份验证。 若要获取所需的 OAuth 访问令牌以调用 Microsoft Graph，这是必需的。 在此步骤中，将[Microsoft 身份验证库的角度](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md)集成到应用程序中。
 
-在名为`./src` `oauth.ts`的目录中创建一个新文件, 并添加以下代码。
+在名为`./src` `oauth.ts`的目录中创建一个新文件，并添加以下代码。
 
 ```TypeScript
 export const OAuthSettings = {
@@ -17,7 +17,7 @@ export const OAuthSettings = {
 将`YOUR_APP_ID_HERE`替换为应用程序注册门户中的应用程序 ID。
 
 > [!IMPORTANT]
-> 如果您使用的是源代码管理 (如 git), 现在可以从源代码管理中排除`oauth.ts`该文件, 以避免无意中泄漏您的应用程序 ID。
+> 如果您使用的是源代码管理（如 git），现在可以从源代码管理中排除`oauth.ts`该文件，以避免无意中泄漏您的应用程序 ID。
 
 打开`./src/app/app.module.ts`并将以下`import`语句添加到文件顶部。
 
@@ -26,7 +26,7 @@ import { MsalModule } from '@azure/msal-angular';
 import { OAuthSettings } from '../oauth';
 ```
 
-然后, 将`MsalModule`添加到`imports` `@NgModule`声明中的数组, 并使用应用 ID 对它进行初始化。
+然后，将`MsalModule`添加到`imports` `@NgModule`声明中的数组，并使用应用 ID 对它进行初始化。
 
 ```TypeScript
 imports: [
@@ -42,7 +42,7 @@ imports: [
 
 ## <a name="implement-sign-in"></a>实施登录
 
-首先定义一个简单`User`的类来保存有关应用程序显示的用户的信息。 在名为`./src/app` `user.ts`的文件夹中创建一个新文件, 并添加以下代码。
+首先定义一个简单`User`的类来保存有关应用程序显示的用户的信息。 在名为`./src/app` `user.ts`的文件夹中创建一个新文件，并添加以下代码。
 
 ```TypeScript
 export class User {
@@ -52,13 +52,13 @@ export class User {
 }
 ```
 
-现在, 创建身份验证服务。 通过为此创建服务, 可以轻松地将其插入到任何需要访问身份验证方法的组件中。 在 CLI 中运行以下命令。
+现在，创建身份验证服务。 通过为此创建服务，可以轻松地将其插入到任何需要访问身份验证方法的组件中。 在 CLI 中运行以下命令。
 
 ```Shell
 ng generate service auth
 ```
 
-命令完成后, 打开`./src/app/auth.service.ts`文件并将其内容替换为以下代码。
+命令完成后，打开`./src/app/auth.service.ts`文件并将其内容替换为以下代码。
 
 ```TypeScript
 import { Injectable } from '@angular/core';
@@ -121,12 +121,12 @@ export class AuthService {
 }
 ```
 
-现在, 你已拥有身份验证服务, 可以将其注入到执行登录的组件中。 从开始`NavBarComponent`。 打开`./src/app/nav-bar/nav-bar.component.ts`文件并进行以下更改。
+现在，你已拥有身份验证服务，可以将其注入到执行登录的组件中。 从开始`NavBarComponent`。 打开`./src/app/nav-bar/nav-bar.component.ts`文件并进行以下更改。
 
 - 添加`import { AuthService } from '../auth.service';`到文件顶部。
-- 从类`authenticated`中`user`移除和属性, 并移除设置它们的代码`ngOnInit`。
-- `AuthService`通过将以下参数添加到`constructor`: `private authService: AuthService`来插入。
-- 将现有`signIn`的方法替换为以下内容:
+- 从类`authenticated`中`user`移除和属性，并移除设置它们的代码`ngOnInit`。
+- `AuthService`通过将以下参数添加到`constructor`： `private authService: AuthService`来插入。
+- 将现有的 `signIn` 方法替换为以下方法：
 
     ```TypeScript
     async signIn(): Promise<void> {
@@ -134,7 +134,7 @@ export class AuthService {
     }
     ```
 
-- 将现有`signOut`的方法替换为以下内容:
+- 将现有的 `signOut` 方法替换为以下方法：
 
     ```TypeScript
     signOut(): void {
@@ -142,7 +142,7 @@ export class AuthService {
     }
     ```
 
-完成后, 代码应类似于以下代码。
+完成后，代码应类似于以下代码。
 
 ```TypeScript
 import { Component, OnInit } from '@angular/core';
@@ -181,15 +181,15 @@ export class NavBarComponent implements OnInit {
 }
 ```
 
-由于在类上`authenticated`删除`user`了和属性, 因此还需要更新`./src/app/nav-bar/nav-bar.component.html`文件。 打开该文件并进行以下更改。
+由于在类上`authenticated`删除`user`了和属性，因此还需要更新`./src/app/nav-bar/nav-bar.component.html`文件。 打开该文件并进行以下更改。
 
 - 将的`authenticated`所有实例都`authService.authenticated`替换为。
 - 将的`user`的所有实例`authService.user`都替换为。
 
-下一步`HomeComponent`更新该类。 在中`./src/app/home/home.component.ts`对`NavBarComponent`类进行所有相同的更改, 但以下情况除外。
+下一步`HomeComponent`更新该类。 在中`./src/app/home/home.component.ts`对`NavBarComponent`类进行所有相同的更改，但以下情况除外。
 
 - `HomeComponent`类中没有`signOut`方法。
-- 将`signIn`方法替换为略有不同的版本。 此代码调用`getAccessToken`获取访问令牌, 该令牌现在会将令牌输出为错误。
+- 将`signIn`方法替换为略有不同的版本。 此代码调用`getAccessToken`获取访问令牌，该令牌现在会将令牌输出为错误。
 
     ```TypeScript
     async signIn(): Promise<void> {
@@ -202,7 +202,7 @@ export class NavBarComponent implements OnInit {
     }
     ```
 
-完成后, 文件应如下所示。
+完成后，文件应如下所示。
 
 ```TypeScript
 import { Component, OnInit } from '@angular/core';
@@ -231,13 +231,13 @@ export class HomeComponent implements OnInit {
 }
 ```
 
-最后, 在中`./src/app/home/home.component.html`对导航栏进行相同的替换。
+最后，在中`./src/app/home/home.component.html`对导航栏进行相同的替换。
 
-保存所做的更改并刷新浏览器。 单击 "**单击此处进行登录**" 按钮, 您应被重定向`https://login.microsoftonline.com`到。 使用你的 Microsoft 帐户登录, 并同意请求的权限。 应用程序页面应刷新, 并显示令牌。
+保存所做的更改并刷新浏览器。 单击 "**单击此处进行登录**" 按钮，您应被重定向`https://login.microsoftonline.com`到。 使用你的 Microsoft 帐户登录，并同意请求的权限。 应用程序页面应刷新，并显示令牌。
 
 ### <a name="get-user-details"></a>获取用户详细信息
 
-现在, 身份验证服务为用户的显示名称和电子邮件地址设置常量值。 现在, 你已拥有访问令牌, 可以从 Microsoft Graph 获取用户详细信息, 以便这些值与当前用户相对应。 打开`./src/app/auth.service.ts`并将以下`import`语句添加到文件顶部。
+现在，身份验证服务为用户的显示名称和电子邮件地址设置常量值。 现在，你已拥有访问令牌，可以从 Microsoft Graph 获取用户详细信息，以便这些值与当前用户相对应。 打开`./src/app/auth.service.ts`并将以下`import`语句添加到文件顶部。
 
 ```TypeScript
 import { Client } from '@microsoft/microsoft-graph-client';
@@ -280,6 +280,13 @@ private async getUser(): Promise<User> {
 }
 ```
 
+在添加通知以显示访问令牌的`getAccessToken`方法中找到并删除以下代码。
+
+```TypeScript
+// Temporary to display token in an error box
+if (result) this.alertsService.add('Token acquired', result);
+```
+
 从`signIn`方法中找到并删除以下代码。
 
 ```TypeScript
@@ -295,9 +302,9 @@ this.user.email = "AdeleV@contoso.com";
 this.user = await this.getUser();
 ```
 
-此新代码使用 Microsoft Graph SDK 获取用户的详细信息, 然后使用 API 调用返回`User`的值创建对象。
+此新代码使用 Microsoft Graph SDK 获取用户的详细信息，然后使用 API 调用返回`User`的值创建对象。
 
-现在, 将`constructor` `AuthService`类更改为检查用户是否已登录并加载其详细信息 (如果这样做的话)。 将现有`constructor`替换为以下项。
+现在，将`constructor` `AuthService`类更改为检查用户是否已登录并加载其详细信息（如果这样做的话）。 将现有`constructor`替换为以下项。
 
 ```TypeScript
 constructor(
@@ -309,7 +316,7 @@ constructor(
 }
 ```
 
-最后, 从`HomeComponent`类中删除临时代码。 打开`./src/app/home/home.component.ts`文件, 并将现有`signIn`函数替换为以下项。
+最后，从`HomeComponent`类中删除临时代码。 打开`./src/app/home/home.component.ts`文件，并将现有`signIn`函数替换为以下项。
 
 ```TypeScript
 async signIn(): Promise<void> {
@@ -317,7 +324,7 @@ async signIn(): Promise<void> {
 }
 ```
 
-现在, 如果您保存更改并启动应用程序, 登录后应返回到主页, 但 UI 应更改以指示您已登录。
+现在，如果您保存更改并启动应用程序，登录后应返回到主页，但 UI 应更改以指示您已登录。
 
 ![登录后主页的屏幕截图](./images/add-aad-auth-01.png)
 
@@ -327,6 +334,6 @@ async signIn(): Promise<void> {
 
 ## <a name="storing-and-refreshing-tokens"></a>存储和刷新令牌
 
-此时, 您的应用程序具有访问令牌, 该令牌是在 API `Authorization`调用的标头中发送的。 这是允许应用代表用户访问 Microsoft Graph 的令牌。
+此时，您的应用程序具有访问令牌，该令牌是在 API `Authorization`调用的标头中发送的。 这是允许应用代表用户访问 Microsoft Graph 的令牌。
 
-但是, 此令牌的生存期较短。 令牌在发出后会过期一小时。 由于应用程序使用的是 MSAL 库, 因此您无需实现任何令牌存储或刷新逻辑。 将`MsalService`在浏览器存储中缓存令牌。 该`acquireTokenSilent`方法首先检查缓存的标记, 如果它未过期, 它将返回。 如果它已过期, 则发出无提示请求以获取新的请求。
+但是，此令牌的生存期较短。 令牌在发出后会过期一小时。 由于应用程序使用的是 MSAL 库，因此您无需实现任何令牌存储或刷新逻辑。 将`MsalService`在浏览器存储中缓存令牌。 该`acquireTokenSilent`方法首先检查缓存的标记，如果它未过期，它将返回。 如果它已过期，则发出无提示请求以获取新的请求。

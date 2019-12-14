@@ -1,10 +1,10 @@
 # <a name="graphtutorial"></a>GraphTutorial
 
-此项目是使用[角度 CLI](https://github.com/angular/angular-cli)版本7.1.1 生成的。
+此项目是使用[角度 CLI](https://github.com/angular/angular-cli)版本8.3.20 生成的。
 
 ## <a name="development-server"></a>开发服务器
 
-为`ng serve` Dev 服务器运行。 导航到 `http://localhost:4200/`。 如果更改任何源文件, 应用将自动重新加载。
+为`ng serve` dev 服务器运行。 导航到 `http://localhost:4200/`。 如果更改任何源文件，应用将自动重新加载。
 
 ## <a name="code-scaffolding"></a>代码基架
 
@@ -24,4 +24,4 @@
 
 ## <a name="further-help"></a>进一步帮助
 
-若要获取有关角度 CLI 使用`ng help`的更多帮助, 请参阅[角度 cli 自述文件](https://github.com/angular/angular-cli/blob/master/README.md)。
+若要获取有关角度 CLI 使用`ng help`的更多帮助，请参阅[角度 cli 自述文件](https://github.com/angular/angular-cli/blob/master/README.md)。
