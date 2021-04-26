@@ -1,15 +1,15 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-在此部分中，你将创建新的 Angular 项目。
+在此部分中，你将创建一个新的Angular项目。
 
-1. 打开命令行接口 (CLI) ，导航到你拥有创建文件权限的目录，然后运行以下命令来安装 [Angular CLI](https://www.npmjs.com/package/@angular/cli) 工具并创建新的 Angular 应用。
+1. 打开命令行接口 (CLI) ，导航到你拥有创建文件权限的目录，然后运行以下命令来安装[Angular CLI](https://www.npmjs.com/package/@angular/cli)工具并创建新的 Angular 应用。
 
     ```Shell
     npm install -g @angular/cli@11.2.9
     ng new graph-tutorial
     ```
 
-1. Angular CLI 将提示输入详细信息。 回答提示，如下所示。
+1. THE Angular CLI will prompt for more information. 回答提示，如下所示。
 
     ```Shell
     ? Do you want to enforce stricter type checking and stricter bundle budgets in the workspace? Yes
@@ -23,29 +23,29 @@
     ng serve --open
     ```
 
-1. 默认浏览器将打开， [https://localhost:4200/](https://localhost:4200) 并打开一个默认的 Angular 页面。 如果浏览器未打开，请打开它并浏览 [https://localhost:4200/](https://localhost:4200) 以验证新应用是否正常工作。
+1. 默认浏览器将打开 [https://localhost:4200/](https://localhost:4200) ，并打开默认Angular页面。 如果浏览器未打开，请打开它并浏览 [https://localhost:4200/](https://localhost:4200) 以验证新应用是否正常工作。
 
 ## <a name="add-node-packages"></a>添加节点包
 
 在继续之前，请安装一些你稍后将使用的其他程序包：
 
 - [用于样式](https://github.com/twbs/bootstrap) 设置和常见组件的引导。
-- [ng-bootstrap，](https://github.com/ng-bootstrap/ng-bootstrap) 用于使用 Angular 中的 Bootstrap 组件。
+- [ng-bootstrap，](https://github.com/ng-bootstrap/ng-bootstrap)用于从 Angular。
 - [设置](https://github.com/moment/moment) 日期和时间格式的时间。
 - [windows-iana](https://github.com/rubenillodo/windows-iana)
-- [msal-angular，](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md) 用于对 Azure Active Directory 进行身份验证和检索访问令牌。
-- 用于调用 Microsoft Graph 的[microsoft-graph-client。](https://github.com/microsoftgraph/msgraph-sdk-javascript)
+- [msal-angular，](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md)用于Azure Active Directory令牌进行身份验证和检索访问令牌。
+- [用于调用](https://github.com/microsoftgraph/msgraph-sdk-javascript)Microsoft Graph 的 microsoft-graph-client。
 
 1. 在 CLI 中运行以下命令。
 
     ```Shell
     npm install bootstrap@4.6.0 @ng-bootstrap/ng-bootstrap@9.1.0
     npm install @azure/msal-browser@2.14.0 @azure/msal-angular@2.0.0-beta.4
-    npm install moment-timezone@0.5.33 windows-iana@5.0.1
+    npm install moment-timezone@0.5.33 windows-iana@5.0.2
     npm install @microsoft/microsoft-graph-client@2.2.1 @microsoft/microsoft-graph-types@1.35.0
     ```
 
-1. 在 CLI 中运行以下命令，添加 ng-bootstrap (所需的 Angular 本地化) 。
+1. 在 CLI 中运行以下命令，添加 ng-bootstrap Angular所需的 (本地化) 。
 
     ```Shell
     ng add @angular/localize
@@ -90,7 +90,7 @@
 
     :::code language="typescript" source="../demo/graph-tutorial/src/app/user.ts" id="UserSnippet":::
 
-1. 为页面上的顶部导航生成 Angular 组件。 在 CLI 中，运行以下命令。
+1. 为Angular顶部导航生成一个导航组件。 在 CLI 中，运行以下命令。
 
     ```Shell
     ng generate component nav-bar
@@ -238,7 +238,7 @@
 
     :::code language="html" source="../demo/graph-tutorial/src/app/app.component.html" id="AppHtml":::
 
-1. 在 **./src/assets** **目录中** 添加no-profile-photo.png选择的图像文件。 当用户在 Microsoft Graph 中没有照片时，此图像将用作用户的照片。
+1. 在 **./src/assets** **目录中** 添加no-profile-photo.png选择的图像文件。 当用户在 Microsoft Graph 中没有照片时，此图像将用作用户Graph。
 
 保存所有更改并刷新页面。 现在，应用看起来应该非常不同。
 
